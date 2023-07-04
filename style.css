@@ -1,0 +1,108 @@
+* {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #daf0ff;
+  min-height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  background-color: #f7f8fb;
+  -webkit-box-shadow: 84px 29px 125px -45px rgba(96, 190, 255, 1);
+  -moz-box-shadow: 84px 29px 125px -45px rgba(96, 190, 255, 1);
+  box-shadow: 84px 29px 125px -45px rgba(96, 190, 255, 1);
+  max-width: 300px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 25px 35px;
+  border-radius: 10px;
+  user-select: none;
+}
+
+#Display-area {
+  width: 100%;
+  margin: 3vh 0;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: repeat(2, minmax(40px, auto));
+  word-wrap: break-word;
+  padding-bottom: 20px;
+  border-bottom: 1px rgba(128, 128, 128, 0.116) solid;
+}
+
+#Display-area .currentInput {
+  /* display: flex; */
+  text-align: right;
+  height: 8vh;
+  color: #818181;
+  font-size: xx-large;
+  line-height: 2;
+  word-wrap: break-word;
+}
+
+#Display-area .answerScreen {
+  text-align: right;
+  color: rgba(150, 150, 150, 0.87);
+  height: 7px;
+  line-height: 3;
+  font-size: larger;
+}
+
+.keypad-btns {
+  display: grid;
+  grid: repeat(5, 70px) / repeat(4, 70px);
+  grid-row-gap: 20px;
+  grid-column-gap: 20px;
+}
+
+.keypad-btns button {
+  outline: none;
+  border: none;
+  /* border: 1px solid red; */
+  border-radius: 16px;
+  background-color: #fff;
+  color: #38b9ff;
+  font-size: x-large;
+  -webkit-box-shadow: 10px 10px 44px -22px rgba(0, 0, 0, 1);
+  -moz-box-shadow: 10px 10px 44px -22px rgba(0, 0, 0, 1);
+  box-shadow: 10px 10px 44px -22px rgba(0, 0, 0, 1);
+  transition: 0.1s;
+}
+/* .keypad-btns button:hover {
+  transform: scale(1.1);
+} */
+.keypad-btns .fun_btn {
+  color: #109dff;
+  background-color: #ade2ff;
+}
+
+.num_btn:hover,
+.fun_btn:hover {
+  /* background-color: rgba(29, 29, 29, 0.979); */
+  cursor: pointer;
+  transform: scale(0.9);
+  box-shadow: none;
+  /* transition: all 0.1s; */
+}
+
+.num_btn:active,
+.fun_btn:active {
+  transform: scale(0.8);
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+    background-color: #f7f8fb;
+    align-items: flex-start;
+  }
+  .container {
+    box-shadow: none;
+  }
+}
