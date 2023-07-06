@@ -12,9 +12,7 @@ body {
 
 .container {
   background-color: #f7f8fb;
-  -webkit-box-shadow: 84px 29px 125px -45px rgba(96, 190, 255, 1);
-  -moz-box-shadow: 84px 29px 125px -45px rgba(96, 190, 255, 1);
-  box-shadow: 84px 29px 125px -45px rgba(96, 190, 255, 1);
+  box-shadow: 0 0 20px rgba(96, 190, 255, 0.5);
   max-width: 300px;
   height: auto;
   display: flex;
@@ -38,7 +36,6 @@ body {
 }
 
 #Display-area .currentInput {
-  /* display: flex; */
   text-align: right;
   height: 8vh;
   color: #818181;
@@ -57,7 +54,8 @@ body {
 
 .keypad-btns {
   display: grid;
-  grid: repeat(5, 70px) / repeat(4, 70px);
+  grid-template-columns: repeat(4, 70px);
+  grid-template-rows: repeat(5, 70px);
   grid-row-gap: 20px;
   grid-column-gap: 20px;
 }
@@ -65,19 +63,14 @@ body {
 .keypad-btns button {
   outline: none;
   border: none;
-  /* border: 1px solid red; */
   border-radius: 16px;
   background-color: #fff;
   color: #38b9ff;
   font-size: x-large;
-  -webkit-box-shadow: 10px 10px 44px -22px rgba(0, 0, 0, 1);
-  -moz-box-shadow: 10px 10px 44px -22px rgba(0, 0, 0, 1);
-  box-shadow: 10px 10px 44px -22px rgba(0, 0, 0, 1);
+  box-shadow: 10px 10px 44px -22px rgba(0, 0, 0, 0.5);
   transition: 0.1s;
 }
-/* .keypad-btns button:hover {
-  transform: scale(1.1);
-} */
+
 .keypad-btns .fun_btn {
   color: #109dff;
   background-color: #ade2ff;
@@ -85,11 +78,9 @@ body {
 
 .num_btn:hover,
 .fun_btn:hover {
-  /* background-color: rgba(29, 29, 29, 0.979); */
   cursor: pointer;
   transform: scale(0.9);
   box-shadow: none;
-  /* transition: all 0.1s; */
 }
 
 .num_btn:active,
@@ -97,12 +88,24 @@ body {
   transform: scale(0.8);
 }
 
+/* Responsive Styles for Mobile Devices */
+
 @media only screen and (max-width: 600px) {
+  /* Adjust body alignment and background color */
   body {
     background-color: #f7f8fb;
-    align-items: flex-start;
   }
+
+  /* Remove box-shadow from container */
   .container {
     box-shadow: none;
+  }
+
+  /* Adjust keypad button layout for mobile */
+  .keypad-btns {
+    grid-template-columns: repeat(4, 60px);
+    grid-template-rows: repeat(5, 60px);
+    grid-row-gap: 10px;
+    grid-column-gap: 10px;
   }
 }
